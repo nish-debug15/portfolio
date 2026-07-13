@@ -1,0 +1,198 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@theme {
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --color-brutal-black: #000000;
+  --color-brutal-red: #e53e3e;
+  --color-brutal-white: #ffffff;
+  --color-brutal-blue: #0055ff;
+  --color-pill-bg: #f0f0f0;
+  --color-card-bg: #ffffff;
+  --color-pastel-yellow: #fef4b5;
+  --color-pastel-pink: #ffe4e1;
+  --color-pastel-blue: #d9e2fc;
+}
+
+/* ---- Animated gradient background ---- */
+body {
+  position: relative;
+  font-family: var(--font-body);
+  background: linear-gradient(
+    90deg,
+    #fef4b5 0%,
+    #ffe4e1 33%,
+    #d9e2fc 66%,
+    #fef4b5 100%
+  );
+  background-size: 300% 100%;
+  animation: gradient-sweep 12s linear infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradient-sweep {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: -300% 50%; }
+}
+
+/* ---- Graph-paper grid overlay ---- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ---- Brutalist utilities ---- */
+.brutal-border {
+  border: 2px solid var(--color-brutal-black);
+}
+
+.brutal-shadow {
+  box-shadow: 4px 4px 0px var(--color-brutal-black);
+}
+
+.brutal-shadow-hover {
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.brutal-shadow-hover:hover {
+  box-shadow: 6px 6px 0px var(--color-brutal-black);
+  transform: translate(-2px, -2px);
+}
+
+.brutal-shadow-hover:active {
+  box-shadow: 2px 2px 0px var(--color-brutal-black);
+  transform: translate(2px, 2px);
+}
+
+/* ---- Pill badges ---- */
+.tech-pill {
+  display: inline-block;
+  background: var(--color-pill-bg);
+  color: #333;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1.5px solid #ccc;
+}
+
+/* ---- Headings ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fef4b5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brutal-black);
+  border: 2px solid #fef4b5;
+}
+
+/* ---- Timeline ---- */
+.timeline-line {
+  position: relative;
+}
+
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-brutal-black);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -45px;
+  top: 24px;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  border: 2px solid var(--color-brutal-black);
+  z-index: 10;
+}
+
+/* ---- Scroll-triggered fade in ---- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Nav link underline ---- */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: var(--color-brutal-black);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ---- Sections above grid overlay ---- */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Achievement pastel card backgrounds ---- */
+.achievement-card-yellow {
+  background: #fef9d7;
+}
+
+.achievement-card-pink {
+  background: #fff0ee;
+}
+
+.achievement-card-blue {
+  background: #e8eeff;
+}
+
+/* ---- Smooth scroll ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Mobile hamburger ---- */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
