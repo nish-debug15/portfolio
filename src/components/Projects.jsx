@@ -2,6 +2,12 @@ import React from 'react';
 
 const projects = [
   {
+    title: 'DevPulse',
+    tech: ['Python', 'FastAPI', 'PostgreSQL'],
+    desc: 'AI-powered engineering standup & bottleneck tracker with automated GitHub syncing.',
+    link: 'https://github.com/nish-debug15',
+  },
+  {
     title: 'UrbanLens',
     tech: ['React', 'Python', 'ML'],
     desc: 'Co-developed UrbanLens, an urban analytics platform for data-driven city planning and visualization.',
@@ -14,10 +20,22 @@ const projects = [
     link: 'https://github.com/nish-debug15/User-Journey-Funnel-Analysis',
   },
   {
+    title: 'Telecom Customer Churn',
+    tech: ['XGBoost', 'Scikit-learn', 'SHAP'],
+    desc: 'End-to-end predictive pipeline achieving 95.8% recall with a Streamlit dashboard.',
+    link: 'https://github.com/nish-debug15',
+  },
+  {
     title: 'BO Cointegration Trading',
     tech: ['Python', 'Statistics', 'Trading'],
     desc: 'Algorithmic trading implementation focusing on cointegration strategies for statistical arbitrage.',
     link: 'https://github.com/nish-debug15/bo-cointegration-trading',
+  },
+  {
+    title: 'Brain Tumor Detection',
+    tech: ['TensorFlow', 'ResNet50', 'OpenCV'],
+    desc: 'Transfer learning model for MRI classification featuring Grad-CAM explainability.',
+    link: 'https://github.com/nish-debug15',
   },
   {
     title: 'EdgeWise',
@@ -34,7 +52,7 @@ const Projects = () => {
         &lt;/&gt; Things I've Built
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <div
             key={idx}
