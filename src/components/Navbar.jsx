@@ -41,7 +41,9 @@ const Navbar = () => {
         {/* Right side */}
         <div className="hidden md:flex">
           <a
-            href="mailto:patelnishit118@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&to=patelnishit118@gmail.com&su=Let's%20Connect"
+            target="_blank"
+            rel="noreferrer"
             className="brutal-border brutal-shadow-hover bg-[#e53e3e] text-white px-6 py-2.5 font-bold text-sm transition-all"
           >
             HIRE ME
@@ -76,7 +78,9 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="mailto:patelnishit118@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&to=patelnishit118@gmail.com&su=Let's%20Connect"
+            target="_blank"
+            rel="noreferrer"
             onClick={() => setMenuOpen(false)}
             className="brutal-border brutal-shadow bg-[#e53e3e] text-white px-8 py-3 font-bold text-lg"
           >

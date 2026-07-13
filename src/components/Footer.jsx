@@ -26,7 +26,9 @@ const Footer = () => {
             LinkedIn
           </a>
           <a
-            href="mailto:patelnishit118@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&to=patelnishit118@gmail.com&su=Let's%20Connect"
+            target="_blank"
+            rel="noreferrer"
             className="hover:text-[#e53e3e] transition-colors nav-link"
           >
             Email
