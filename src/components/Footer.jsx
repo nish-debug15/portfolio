@@ -31,6 +31,14 @@ const Footer = () => {
           >
             Email
           </a>
+          <a
+            href="https://www.instagram.com/nishhx0/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-[#e53e3e] transition-colors nav-link"
+          >
+            Instagram
+          </a>
         </div>
       </div>
     </footer>

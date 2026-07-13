@@ -8,7 +8,7 @@ const Hero = () => {
     >
       {/* Badge */}
       <div className="bg-white brutal-border brutal-shadow px-5 py-1.5 mb-8 inline-block">
-        <span className="font-bold text-sm tracking-wide">• HI, I'M NISHIT PATEL</span>
+        <span className="font-bold text-sm tracking-wide">HI, I'M NISHIT PATEL</span>
       </div>
 
       {/* Main headline */}
@@ -23,7 +23,7 @@ const Hero = () => {
 
       {/* Subtitle — directly on grid, no background box */}
       <p className="max-w-2xl text-lg md:text-xl font-medium leading-relaxed mb-12 px-4">
-        Building at the intersection of applied machine learning, scalable backend systems, and AI-driven products.
+        Architecting scalable backend systems and building applied machine learning products.
       </p>
 
       {/* Action buttons */}
@@ -32,7 +32,7 @@ const Hero = () => {
           href="#projects"
           className="brutal-border brutal-shadow-hover bg-black text-white px-8 py-4 font-bold text-lg transition-all"
         >
-          VIEW PROJECTS →
+          VIEW PROJECTS &rarr;
         </a>
         <a
           href="https://github.com/nish-debug15"

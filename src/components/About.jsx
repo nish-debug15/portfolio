@@ -10,21 +10,23 @@ const About = () => {
       {/* Text directly on the grid background — no white box */}
       <div className="max-w-3xl space-y-6 text-lg md:text-xl font-medium leading-relaxed">
         <p>
-          I'm a Computer Science undergraduate at RV University focusing on Data Science and scalable systems.
-          I build end-to-end ML pipelines, NLP systems, and robust backend infrastructure.
+          I am a Computer Science undergraduate specializing in Data Science and machine learning
+          infrastructure. My focus is on architecting scalable backend systems and end-to-end ML
+          pipelines that solve complex, data-heavy problems.
         </p>
         <p>
-          Beyond the resume, I'm passionate about engineering real-world solutions that can handle scale
-          and complexity, keeping my sights set on pushing technical boundaries at leading engineering
-          organizations like Google.
+          Currently working as a Machine Learning Intern at Flyrank AI, I am passionate about
+          engineering real-world solutions that handle scale and complexity. My trajectory is firmly
+          geared toward pushing technical boundaries and building high-impact products at leading
+          technology firms like Google.
         </p>
         <p>
-          Whether it's fine-tuning deep learning models or architecting full-stack applications with
-          FastAPI and PostgreSQL, building is just how I think.
+          Whether it is fine-tuning deep learning models or deploying robust full-stack applications,
+          I thrive at the intersection of applied research and rigorous software engineering.
         </p>
       </div>
 
-      {/* Resume CTA */}
+      {/* Resume CTA — no emoji */}
       <div className="mt-10">
         <a
           href="https://drive.google.com/file/d/1_FsPiRYvZZ-jTLVK2BBH6SCypxto9FTt/view?usp=drive_link"
@@ -32,7 +34,7 @@ const About = () => {
           rel="noreferrer"
           className="brutal-border brutal-shadow brutal-shadow-hover bg-white px-8 py-4 font-bold text-lg inline-block transition-all"
         >
-          📄 GRAB MY RESUME
+          GRAB MY RESUME
         </a>
       </div>
     </section>

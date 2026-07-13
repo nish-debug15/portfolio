@@ -13,7 +13,7 @@ const Navbar = () => {
   const links = [
     { label: 'ABOUT', href: '#about' },
     { label: 'EXPERIENCE', href: '#experience' },
-    { label: 'ACHIEVEMENTS', href: '#achievements' },
+    { label: 'LEADERSHIP', href: '#leadership' },
     { label: 'PROJECTS', href: '#projects' },
   ];
 
@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="text-2xl font-black font-heading tracking-tight">
-          &lt;NISH.DEV/&gt;
+          NISHIT PATEL
         </a>
 
         {/* Desktop nav links */}

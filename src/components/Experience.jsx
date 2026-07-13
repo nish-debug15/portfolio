@@ -2,7 +2,7 @@ import React from 'react';
 
 const experiences = [
   {
-    role: 'Flyrank AI',
+    role: 'Machine Learning Intern @ Flyrank AI',
     date: 'July 2026 - Present',
     description: [
       'Working on cutting-edge AI solutions and scalable infrastructure.',
@@ -59,7 +59,7 @@ const Experience = () => {
               <ul className="space-y-2">
                 {exp.description.map((line, i) => (
                   <li key={i} className="text-base md:text-lg font-medium flex items-start gap-2">
-                    <span className="text-[#e53e3e] mt-1.5 text-xs">■</span>
+                    <span className="text-[#e53e3e] mt-1.5 text-xs">&#9632;</span>
                     <span>{line}</span>
                   </li>
                 ))}
