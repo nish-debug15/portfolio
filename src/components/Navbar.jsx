@@ -51,7 +51,7 @@ const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden brutal-border bg-white p-2 z-60"
+          className="md:hidden brutal-border bg-white p-2 z-[60] relative"
           aria-label="Toggle menu"
         >
           <div className="w-6 flex flex-col gap-1.5">
