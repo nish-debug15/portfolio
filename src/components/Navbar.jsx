@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,83 +30,129 @@ const Navbar = () => {
     { label: 'PROJECTS', href: '#projects' },
   ];
 
-  return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 border-b-2 border-black transition-all duration-300 ${
-        scrolled ? 'bg-white/90 backdrop-blur-sm brutal-shadow' : 'bg-white/70 backdrop-blur-sm'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="text-2xl font-black font-heading tracking-tight">
-          NISHIT PATEL
-        </a>
+  // Logo monogram used in both nav bar and mobile menu header
+  const LogoMark = ({ className = '' }) => (
+    <a href="#" className={`font-black font-heading tracking-tight text-2xl ${className}`}>
+      <span className="text-black">N</span>
+      <span className="text-[#0055ff]">P</span>
+    </a>
+  );
 
-        {/* Desktop nav links */}
-        <div className="hidden md:flex space-x-8 font-bold text-sm tracking-wide">
-          {links.map((link) => (
-            <a key={link.label} href={link.href} className="nav-link">
-              {link.label}
-            </a>
-          ))}
-        </div>
-
-        {/* Right side */}
-        <div className="hidden md:flex">
-          <a
-            href="https://mail.google.com/mail/?view=cm&to=patelnishit118@gmail.com&su=Let's%20Connect"
-            target="_blank"
-            rel="noreferrer"
-            className="brutal-border brutal-shadow-hover bg-[#e53e3e] text-white px-6 py-2.5 font-bold text-sm transition-all"
-            aria-label="Let's Connect — send an email"
-          >
-            LET'S CONNECT
-          </a>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden brutal-border bg-white p-2 z-[10000] relative"
-          aria-label="Toggle menu"
+  // Full-viewport mobile menu — rendered via portal to escape all stacking contexts
+  const mobileMenu = menuOpen
+    ? createPortal(
+        <div
+          className="md:hidden"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 9999,
+            backgroundColor: '#ffffff',
+          }}
         >
-          <div className="w-6 flex flex-col gap-1.5">
-            <span className={`block h-0.5 w-full bg-black transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block h-0.5 w-full bg-black transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-            <span className={`block h-0.5 w-full bg-black transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-          </div>
-        </button>
-      </div>
-
-      {/* Mobile menu overlay */}
-      <div
-        className={`mobile-menu ${menuOpen ? 'open' : ''} fixed inset-0 top-20 md:hidden`}
-        style={{ zIndex: 9999, backgroundColor: '#ffffff' }}
-      >
-        <div className="flex flex-col items-center pt-12 space-y-8">
-          {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-2xl font-black font-heading"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="https://mail.google.com/mail/?view=cm&to=patelnishit118@gmail.com&su=Let's%20Connect"
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className="brutal-border brutal-shadow bg-[#e53e3e] text-white px-8 py-3 font-bold text-lg"
-            aria-label="Let's Connect — send an email"
+          {/* Header row — logo + close button */}
+          <div
+            className="flex items-center justify-between px-6 border-b-2 border-black"
+            style={{ height: '80px' }}
           >
-            LET'S CONNECT
-          </a>
+            <LogoMark />
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="brutal-border bg-white p-2"
+              aria-label="Close menu"
+            >
+              <div className="w-6 h-6 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <line x1="2" y1="2" x2="16" y2="16" />
+                  <line x1="16" y1="2" x2="2" y2="16" />
+                </svg>
+              </div>
+            </button>
+          </div>
+
+          {/* Nav links — stacked, left-aligned, generous spacing */}
+          <div className="flex flex-col px-8 pt-10 space-y-7">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="text-3xl font-black font-heading tracking-tight block w-full py-2"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* CTA button */}
+          <div className="px-8 pt-10">
+            <a
+              href="https://mail.google.com/mail/?view=cm&to=patelnishit118@gmail.com&su=Let's%20Connect"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="brutal-border brutal-shadow bg-[#e53e3e] text-white px-8 py-4 font-bold text-lg block text-center w-full"
+              aria-label="Let's Connect — send an email"
+            >
+              LET'S CONNECT
+            </a>
+          </div>
+        </div>,
+        document.body
+      )
+    : null;
+
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 border-b-2 border-black transition-all duration-300 ${
+          scrolled ? 'bg-white/90 backdrop-blur-sm brutal-shadow' : 'bg-white/70 backdrop-blur-sm'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          {/* Logo — NP monogram */}
+          <LogoMark />
+
+          {/* Desktop nav links */}
+          <div className="hidden md:flex space-x-8 font-bold text-sm tracking-wide">
+            {links.map((link) => (
+              <a key={link.label} href={link.href} className="nav-link">
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Right side — desktop CTA */}
+          <div className="hidden md:flex">
+            <a
+              href="https://mail.google.com/mail/?view=cm&to=patelnishit118@gmail.com&su=Let's%20Connect"
+              target="_blank"
+              rel="noreferrer"
+              className="brutal-border brutal-shadow-hover bg-[#e53e3e] text-white px-6 py-2.5 font-bold text-sm transition-all"
+              aria-label="Let's Connect — send an email"
+            >
+              LET'S CONNECT
+            </a>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden brutal-border bg-white p-2"
+            aria-label="Open menu"
+          >
+            <div className="w-6 flex flex-col gap-1.5">
+              <span className="block h-0.5 w-full bg-black" />
+              <span className="block h-0.5 w-full bg-black" />
+              <span className="block h-0.5 w-full bg-black" />
+            </div>
+          </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile menu — portaled to document.body, fully outside nav stacking context */}
+      {mobileMenu}
+    </>
   );
 };
 

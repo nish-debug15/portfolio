@@ -19,36 +19,23 @@ const About = () => {
           </div>
         </div>
 
-        {/* Text — scannable format, capped line width */}
-        <div className="max-w-prose space-y-5 text-lg md:text-xl font-medium leading-relaxed">
+        {/* Text — paragraph form, capped line width */}
+        <div className="max-w-prose space-y-6 text-lg md:text-xl font-medium leading-relaxed">
           <p>
-            CS undergrad specializing in Data Science — focused on building ML
-            systems that actually ship.
+            I am a Computer Science undergraduate specializing in Data Science and machine learning
+            infrastructure. My focus is on architecting scalable backend systems and end-to-end ML
+            pipelines that solve complex, data-heavy problems.
           </p>
-
-          <ul className="space-y-3">
-            <li className="flex items-start gap-2">
-              <span className="text-[#e53e3e] mt-1.5 text-xs">&#9632;</span>
-              <span>
-                Currently an ML Intern at Flyrank AI, engineering
-                production-grade AI solutions at scale.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#e53e3e] mt-1.5 text-xs">&#9632;</span>
-              <span>
-                Hands-on with end-to-end ML pipelines — from data wrangling and
-                model training to deployment and monitoring.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#e53e3e] mt-1.5 text-xs">&#9632;</span>
-              <span>
-                Driven to solve hard infrastructure problems where applied
-                research meets rigorous engineering at scale.
-              </span>
-            </li>
-          </ul>
+          <p>
+            Currently working as a Machine Learning Intern at Flyrank AI, I am passionate about
+            engineering real-world solutions that handle scale and complexity. My trajectory is
+            geared toward solving hard, ambiguous problems at the intersection of infrastructure
+            and intelligence — the kind that demand both deep technical craft and systems thinking.
+          </p>
+          <p>
+            Whether it is fine-tuning deep learning models or deploying robust full-stack applications,
+            I thrive at the intersection of applied research and rigorous software engineering.
+          </p>
 
           {/* Resume CTA */}
           <div className="pt-2">

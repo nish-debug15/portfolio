@@ -6,10 +6,10 @@ const Hero = () => {
       id="home"
       className="flex flex-col items-center justify-center min-h-[85vh] text-center fade-in-up visible"
     >
-      {/* Role tag */}
-      <span className="text-sm tracking-[0.25em] font-semibold uppercase text-gray-600 mb-6">
-        ML / Backend Engineer
-      </span>
+      {/* Badge pill */}
+      <div className="bg-white brutal-border brutal-shadow px-5 py-1.5 mb-8 inline-block">
+        <span className="font-bold text-sm tracking-wide">ML / BACKEND ENGINEER</span>
+      </div>
 
       {/* Main headline */}
       <h1 className="font-black font-heading leading-[0.9] mb-8">

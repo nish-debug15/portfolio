@@ -187,14 +187,4 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ---- Mobile hamburger ---- */
-.mobile-menu {
-  transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  background-color: #ffffff;
-  z-index: 9999;
-}
-
-.mobile-menu.open {
-  transform: translateX(0);
-}
+/* ---- Mobile menu (portaled, no transform needed) ---- */
