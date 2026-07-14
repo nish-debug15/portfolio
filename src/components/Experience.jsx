@@ -6,7 +6,7 @@ const experiences = [
     date: 'July 2026 - Present',
     description: [
       'Working on cutting-edge AI solutions and scalable infrastructure.',
-      'Details coming soon — currently building.',
+      'Details coming soon. Currently building.',
     ],
     dotColor: '#0055ff',
   },

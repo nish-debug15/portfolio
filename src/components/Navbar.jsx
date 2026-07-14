@@ -30,11 +30,10 @@ const Navbar = () => {
     { label: 'PROJECTS', href: '#projects' },
   ];
 
-  // Logo monogram used in both nav bar and mobile menu header
+  // Logo used in both nav bar and mobile menu header
   const LogoMark = ({ className = '' }) => (
-    <a href="#" className={`font-black font-heading tracking-tight text-2xl ${className}`}>
-      <span className="text-black">N</span>
-      <span className="text-[#0055ff]">P</span>
+    <a href="#" className={`font-bold font-heading tracking-tight text-xl ${className}`}>
+      NISHIT PATEL
     </a>
   );
 

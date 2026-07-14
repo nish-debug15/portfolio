@@ -30,7 +30,7 @@ const About = () => {
             Currently working as a Machine Learning Intern at Flyrank AI, I am passionate about
             engineering real-world solutions that handle scale and complexity. My trajectory is
             geared toward solving hard, ambiguous problems at the intersection of infrastructure
-            and intelligence — the kind that demand both deep technical craft and systems thinking.
+            and intelligence, the kind that demand both deep technical craft and systems thinking.
           </p>
           <p>
             Whether it is fine-tuning deep learning models or deploying robust full-stack applications,

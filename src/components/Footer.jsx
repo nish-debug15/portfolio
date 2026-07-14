@@ -30,7 +30,7 @@ const socialLinks = [
   },
   {
     label: 'Email',
-    href: 'mailto:patelnishit118@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&to=patelnishit118@gmail.com&su=Let\'s%20Connect',
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -52,13 +52,16 @@ const Footer = () => {
     <footer className="mt-24 relative z-10">
       {/* Social link cards */}
       <div className="max-w-6xl mx-auto px-6 pb-10">
+        <h2 className="text-5xl md:text-7xl font-black mb-10 font-heading">
+          Find Me Elsewhere
+        </h2>
         <div className="flex flex-col gap-4">
           {socialLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              target={link.href.startsWith('mailto:') ? undefined : '_blank'}
-              rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+              target="_blank"
+              rel="noreferrer"
               className="bg-white brutal-border brutal-shadow brutal-shadow-hover flex items-center justify-between px-6 py-5 transition-all"
             >
               <div className="flex items-center gap-4">
@@ -77,8 +80,8 @@ const Footer = () => {
         style={{ backgroundColor: '#fef4b5' }}
       >
         <div className="max-w-6xl mx-auto">
-          <p className="font-bold font-heading text-sm md:text-base tracking-wide">
-            &copy; 2026 Nishit Patel &middot; Minimizing chaos, maximizing tech.
+          <p className="font-black font-heading text-sm md:text-base tracking-wide uppercase">
+            &copy; 2026 Nishit Patel &middot; Minimizing Chaos, Maximizing Tech.
           </p>
         </div>
       </div>
