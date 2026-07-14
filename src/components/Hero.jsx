@@ -6,10 +6,10 @@ const Hero = () => {
       id="home"
       className="flex flex-col items-center justify-center min-h-[85vh] text-center fade-in-up visible"
     >
-      {/* Badge */}
-      <div className="bg-white brutal-border brutal-shadow px-5 py-1.5 mb-8 inline-block">
-        <span className="font-bold text-sm tracking-wide">HI, I'M NISHIT PATEL</span>
-      </div>
+      {/* Role tag */}
+      <span className="text-sm tracking-[0.25em] font-semibold uppercase text-gray-600 mb-6">
+        ML / Backend Engineer
+      </span>
 
       {/* Main headline */}
       <h1 className="font-black font-heading leading-[0.9] mb-8">
@@ -26,23 +26,13 @@ const Hero = () => {
         Architecting scalable backend systems and building applied machine learning products.
       </p>
 
-      {/* Action buttons */}
-      <div className="flex flex-col sm:flex-row gap-5">
-        <a
-          href="#projects"
-          className="brutal-border brutal-shadow-hover bg-black text-white px-8 py-4 font-bold text-lg transition-all"
-        >
-          VIEW PROJECTS &rarr;
-        </a>
-        <a
-          href="https://github.com/nish-debug15"
-          target="_blank"
-          rel="noreferrer"
-          className="brutal-border brutal-shadow-hover bg-white px-8 py-4 font-bold text-lg transition-all"
-        >
-          GITHUB
-        </a>
-      </div>
+      {/* Single CTA */}
+      <a
+        href="#projects"
+        className="brutal-border brutal-shadow-hover bg-black text-white px-8 py-4 font-bold text-lg transition-all"
+      >
+        VIEW PROJECTS &rarr;
+      </a>
     </section>
   );
 };

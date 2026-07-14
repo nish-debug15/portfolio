@@ -10,6 +10,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   const links = [
     { label: 'ABOUT', href: '#about' },
     { label: 'EXPERIENCE', href: '#experience' },
@@ -45,15 +57,16 @@ const Navbar = () => {
             target="_blank"
             rel="noreferrer"
             className="brutal-border brutal-shadow-hover bg-[#e53e3e] text-white px-6 py-2.5 font-bold text-sm transition-all"
+            aria-label="Let's Connect — send an email"
           >
-            HIRE ME
+            LET'S CONNECT
           </a>
         </div>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden brutal-border bg-white p-2 z-[60] relative"
+          className="md:hidden brutal-border bg-white p-2 z-[10000] relative"
           aria-label="Toggle menu"
         >
           <div className="w-6 flex flex-col gap-1.5">
@@ -65,7 +78,10 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu overlay */}
-      <div className={`mobile-menu ${menuOpen ? 'open' : ''} fixed inset-0 top-20 bg-white border-t-2 border-black md:hidden z-40`}>
+      <div
+        className={`mobile-menu ${menuOpen ? 'open' : ''} fixed inset-0 top-20 md:hidden`}
+        style={{ zIndex: 9999, backgroundColor: '#ffffff' }}
+      >
         <div className="flex flex-col items-center pt-12 space-y-8">
           {links.map((link) => (
             <a
@@ -83,8 +99,9 @@ const Navbar = () => {
             rel="noreferrer"
             onClick={() => setMenuOpen(false)}
             className="brutal-border brutal-shadow bg-[#e53e3e] text-white px-8 py-3 font-bold text-lg"
+            aria-label="Let's Connect — send an email"
           >
-            HIRE ME
+            LET'S CONNECT
           </a>
         </div>
       </div>

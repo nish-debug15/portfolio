@@ -19,23 +19,36 @@ const About = () => {
           </div>
         </div>
 
-        {/* Text — directly on grid, no white box */}
-        <div className="space-y-6 text-lg md:text-xl font-medium leading-relaxed">
+        {/* Text — scannable format, capped line width */}
+        <div className="max-w-prose space-y-5 text-lg md:text-xl font-medium leading-relaxed">
           <p>
-            I am a Computer Science undergraduate specializing in Data Science and machine learning
-            infrastructure. My focus is on architecting scalable backend systems and end-to-end ML
-            pipelines that solve complex, data-heavy problems.
+            CS undergrad specializing in Data Science — focused on building ML
+            systems that actually ship.
           </p>
-          <p>
-            Currently working as a Machine Learning Intern at Flyrank AI, I am passionate about
-            engineering real-world solutions that handle scale and complexity. My trajectory is firmly
-            geared toward pushing technical boundaries and building high-impact products at leading
-            technology firms like Google.
-          </p>
-          <p>
-            Whether it is fine-tuning deep learning models or deploying robust full-stack applications,
-            I thrive at the intersection of applied research and rigorous software engineering.
-          </p>
+
+          <ul className="space-y-3">
+            <li className="flex items-start gap-2">
+              <span className="text-[#e53e3e] mt-1.5 text-xs">&#9632;</span>
+              <span>
+                Currently an ML Intern at Flyrank AI, engineering
+                production-grade AI solutions at scale.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#e53e3e] mt-1.5 text-xs">&#9632;</span>
+              <span>
+                Hands-on with end-to-end ML pipelines — from data wrangling and
+                model training to deployment and monitoring.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#e53e3e] mt-1.5 text-xs">&#9632;</span>
+              <span>
+                Driven to solve hard infrastructure problems where applied
+                research meets rigorous engineering at scale.
+              </span>
+            </li>
+          </ul>
 
           {/* Resume CTA */}
           <div className="pt-2">

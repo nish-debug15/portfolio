@@ -5,45 +5,58 @@ const projects = [
     title: 'DevPulse',
     tech: ['Python', 'FastAPI', 'PostgreSQL'],
     desc: 'AI-powered engineering standup & bottleneck tracker with automated GitHub syncing.',
-    link: 'https://github.com/nish-debug15',
+    githubUrl: 'https://github.com/nish-debug15/DevPulse',
+    liveUrl: undefined,
   },
   {
     title: 'UrbanLens',
     tech: ['React', 'Python', 'ML'],
     desc: 'Co-developed UrbanLens, an urban analytics platform for data-driven city planning and visualization.',
-    link: 'https://github.com/Pranav591/Urbanlens2',
+    githubUrl: 'https://github.com/Pranav591/Urbanlens2',
+    liveUrl: undefined,
   },
   {
     title: 'User Journey Funnel Analysis',
     tech: ['Python', 'Pandas', 'Analytics'],
     desc: 'End-to-end product analytics pipeline processing event-level data to diagnose funnel leakage and predict conversions.',
-    link: 'https://github.com/nish-debug15/User-Journey-Funnel-Analysis',
+    githubUrl: 'https://github.com/nish-debug15/User-Journey-Funnel-Analysis',
+    liveUrl: undefined,
   },
   {
     title: 'Telecom Customer Churn',
     tech: ['XGBoost', 'Scikit-learn', 'SHAP'],
     desc: 'End-to-end predictive pipeline achieving 95.8% recall with a Streamlit dashboard.',
-    link: 'https://github.com/nish-debug15',
+    githubUrl: 'https://github.com/nish-debug15/churn_prediction',
+    liveUrl: undefined,
   },
   {
     title: 'BO Cointegration Trading',
     tech: ['Python', 'Statistics', 'Trading'],
     desc: 'Algorithmic trading implementation focusing on cointegration strategies for statistical arbitrage.',
-    link: 'https://github.com/nish-debug15/bo-cointegration-trading',
-  },
-  {
-    title: 'Brain Tumor Detection',
-    tech: ['TensorFlow', 'ResNet50', 'OpenCV'],
-    desc: 'Transfer learning model for MRI classification featuring Grad-CAM explainability.',
-    link: 'https://github.com/nish-debug15',
+    githubUrl: 'https://github.com/nish-debug15/bo-cointegration-trading',
+    liveUrl: undefined,
   },
   {
     title: 'EdgeWise',
     tech: ['Python', 'ML', 'Edge Computing'],
     desc: 'Lightweight edge-optimized inference framework for deploying ML models on resource-constrained devices.',
-    link: 'https://github.com/nish-debug15/EdgeWise',
+    githubUrl: 'https://github.com/nish-debug15/EdgeWise',
+    liveUrl: undefined,
+  },
+  {
+    title: 'Brain Tumor Detection',
+    tech: ['TensorFlow', 'ResNet50', 'OpenCV'],
+    desc: 'Transfer learning model for MRI classification featuring Grad-CAM explainability.',
+    githubUrl: 'https://github.com/nish-debug15/brain_tumor_detection',
+    liveUrl: undefined,
   },
 ];
+
+const GitHubIcon = () => (
+  <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+  </svg>
+);
 
 const Projects = () => {
   return (
@@ -73,16 +86,28 @@ const Projects = () => {
                 {project.desc}
               </p>
             </div>
-            <div className="p-4 border-t-2 border-black bg-gray-50">
+            <div className="p-4 border-t-2 border-black bg-gray-50 flex items-center gap-4">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 brutal-border bg-black text-white px-4 py-2 font-bold text-sm transition-all hover:bg-gray-900"
+                >
+                  Live Demo &rarr;
+                </a>
+              )}
               <a
-                href={project.link}
+                href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 font-bold hover:text-[#e53e3e] transition-colors"
+                className={`inline-flex items-center gap-2 font-bold text-sm transition-all ${
+                  project.liveUrl
+                    ? 'brutal-border bg-white px-4 py-2 hover:bg-gray-100'
+                    : 'hover:text-[#e53e3e] transition-colors'
+                }`}
               >
-                <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true">
-                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-                </svg>
+                <GitHubIcon />
                 <span>GitHub</span>
               </a>
             </div>
