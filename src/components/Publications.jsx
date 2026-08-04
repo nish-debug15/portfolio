@@ -2,29 +2,29 @@ import React from 'react';
 
 const publications = [
   {
+    title: 'Predictive Modeling of Search Engine Visibility Decay: A Machine Learning Approach for Proactive SEO',
+    organization: 'FlyRank ML Internship',
+    date: 'August 2026',
+    description: [
+      'Published a technical research report documenting my Machine Learning Capstone Project completed during the FlyRank ML Internship.',
+      'Built a deterministic, leakage free ML pipeline over 548,528 qualified instances derived from FlyRank\'s 93M+ row Search Intelligence warehouse.',
+      'Final Random Forest achieved a Macro F1 score of 0.4871 on the held out test set. Applied SHAP for interpretability and built a recommendation engine mapping predictions into actionable SEO recommendations.',
+    ],
+    link: 'https://nish-debug15.github.io/search-health-prediction/',
+    buttonLabel: 'Read Report',
+    dotColor: '#0055ff',
+  },
+  {
     title: 'Why Your JWT Cookie Dies Between Vercel and EC2 (And How I Fixed It)',
     organization: 'AWS Builder Center',
     date: 'July 2026',
     description: [
       'Published my first technical article on AWS Builder Center documenting the authentication issues encountered while deploying DevPulse across Vercel and Amazon EC2.',
-      'Covers why session cookies worked locally but failed in production, how cross-origin authentication behaved differently after deployment, and the debugging process that led to the working architecture.',
+      'Covers why session cookies worked locally but failed in production, how cross origin authentication behaved differently after deployment, and the debugging process that led to the working architecture.',
       'Written as part of my journey leading the AWS Student Builder Group at RV University.',
     ],
     link: 'https://builder.aws.com/content/3GP4O5y4CvVN4AnnFMceMy9ZdRU/why-your-jwt-cookie-dies-between-vercel-and-ec2-and-how-i-fixed-it',
     buttonLabel: 'Read Article',
-    dotColor: '#0055ff',
-  },
-  {
-    title: 'Predictive Modeling of Search Engine Visibility Decay: A Machine Learning Approach for Proactive SEO',
-    organization: 'FlyRank ML Internship',
-    date: 'August 2026',
-    description: [
-      'Published a technical research report documenting my Machine Learning Capstone completed during the FlyRank ML Internship.',
-      'Built a deterministic, leakage-free ML pipeline over 548,528 qualified instances derived from FlyRank\'s 93M+ row Search Intelligence warehouse.',
-      'Final Random Forest achieved a Macro F1 score of 0.4871 on the held-out test set. Applied SHAP for interpretability and built a recommendation engine mapping predictions into actionable SEO recommendations.',
-    ],
-    link: 'https://nish-debug15.github.io/search-health-prediction/',
-    buttonLabel: 'Read Report',
     dotColor: '#e53e3e',
   },
 ];
