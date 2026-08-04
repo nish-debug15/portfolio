@@ -28,6 +28,7 @@ const Navbar = () => {
     { label: 'EXPERIENCE', href: '#experience' },
     { label: 'LEADERSHIP', href: '#leadership' },
     { label: 'PROJECTS', href: '#projects' },
+    { label: 'PUBLICATIONS', href: '#publications' },
   ];
 
   // Logo used in both nav bar and mobile menu header
