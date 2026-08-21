@@ -40,7 +40,7 @@ const About = () => {
           {/* Resume CTA */}
           <div className="pt-2">
             <a
-              href="https://drive.google.com/file/d/1_FsPiRYvZZ-jTLVK2BBH6SCypxto9FTt/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1_VNu3n_3OiBTM_WgRlBs-z2hQuRcFusn/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="brutal-border brutal-shadow brutal-shadow-hover bg-white px-8 py-4 font-bold text-lg inline-block transition-all"
